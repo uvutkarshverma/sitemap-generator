@@ -21,8 +21,19 @@ btn.addEventListener("click", function(event){
 
  </url>`;
     xmlmiddle = xmlmiddle + newmid;
+    let xmlfinal = xmlTpp + xmlmiddle +xmlLast
+    xmlfinal = xmlfinal.replaceAll(/</g,"&lt;")
+    xmlfinal = xmlfinal.replaceAll(/>/g,"&gt;")
     document.querySelector(".url").value= "";
-    let mygist = document.
-    console.log(xmlmiddle)
+    let mygist = document.querySelector("tbody");
+    mygist.innerHTML = `<tr>
+    <td id="file-sitemap-xml-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
+    <td id="file-sitemap-xml-LC1" class="blob-code blob-code-inner js-file-line">
+    ${xmlfinal}
+    
+    </td>
+  </tr>`;
+    
+    console.log(xmlfinal)
 });
 
