@@ -25,6 +25,7 @@ btn.addEventListener("click", function(event){
     xmlfinal = xmlfinal.replaceAll(/</g,"&lt;")
     xmlfinal = xmlfinal.replaceAll(/>/g,"&gt;")
     document.querySelector(".url").value= "";
+    btn.classList.toggle("disabled");
     let mygist = document.querySelector("tbody");
     mygist.innerHTML = `<tr>
     <td id="file-sitemap-xml-L1" class="blob-num js-line-number js-code-nav-line-number js-blob-rnum" data-line-number="1"></td>
@@ -36,4 +37,24 @@ btn.addEventListener("click", function(event){
     
     console.log(xmlfinal)
 });
+let btn1 =document.querySelector("#btn"); 
+let link = document.querySelector(".url");
+link.addEventListener("input",()=>{
+  if(document.querySelector(".url").value === ""){
+    console.log("empty");
+    btn1.classList = "btn btn-primary disabled";
+  }else{
+    let re = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&=]*)/
+    const result = link.value.match(re);
+    if(result){
+      btn1.classList.remove("disabled")
+
+    }
+
+    
+  }
+  
+
+})
+
 

@@ -28,11 +28,12 @@
           <h3>Add Your Url Here</h3>
           <div class="form-outline mb-4">
             <input type="url" id="form1Example1" class="form-control url" />
-            <label class="form-label" for="form1Example1">Url</label>
+            <label class="form-label" for="form1Example1" onchange="checkUrl()">Url</label>
+            <div class="invalid-feedback is-invalid">Please choose a username.</div>
           </div>
 
           <!-- Submit button -->
-          <div class="text-center"><button type="submit" class="btn btn-primary btn">Add Url</button></div>
+          <div class="text-center"><button type="submit"  id="btn" class="btn btn-primary btn disabled" >Add Url</button></div>
 
         </form>
       </div>
