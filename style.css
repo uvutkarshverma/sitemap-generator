@@ -182,3 +182,22 @@ body{
     overflow-x: visible;
     overflow-y: visible;
 }
+
+@media screen and (max-width:1000px){
+    .maincontent{
+        flex-direction: column;
+    
+    }
+    .inputArea{
+        width: 100%;
+        
+    }
+    .outputArea{
+        width: 100%;
+       
+    }
+    .area{
+        height: 66rem;
+    }
+
+}
